@@ -7,6 +7,7 @@ from . import views
 
 # create a list of URLs for this app:
 urlpatterns = [
+    # path(url, view, name)
     path(r'', views.home, name="home"), 
     path(r'about', views.about, name="about"), ## new
 
