@@ -16,6 +16,10 @@
             <p>
                 {{article.text}}
             </p>       
+
+            <h4><a href="{% url 'create_comment' article.pk %}">
+                Add a comment</a>
+            </h4>
         </div> <!-- added this! -->
  
     </article> <!-- was <div> -->
