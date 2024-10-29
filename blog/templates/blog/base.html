@@ -12,11 +12,35 @@
 
     <nav>
         <ul>
-            <!-- use the scriptlet URL function to look up a URL by name -->
+            <!-- URLs that do not depend on authentication -->
             <a href="{% url 'show_all' %}">Show All</a>
             <a href="{% url 'random' %}">Random</a>
+
+            <!-- URLs that require authentication  -->
+            {% if request.user.is_authenticated %}
             <a href="{% url 'create_article' %}">Create Article</a> 
+
+            <!-- <a href="{% url 'logout' %}">Logout</a>  -->
+             <!-- log out must be a HTTP POST, so we use a form to call the URL -->
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <input type="submit" value="Logout">
+            </form>
+            
+            <!-- URLs to login -->
+            {% else %}
+            <a href="{% url 'login' %}">Login</a> 
+
+            {% endif %}
         </ul>
+
+        <p>
+            {% if request.user.is_authenticated %}
+            Logged in user: {{request.user}}
+            {% else %}
+            Not logged in.
+            {% endif %}
+        </p>
     </nav>
 
     {% block content %}
