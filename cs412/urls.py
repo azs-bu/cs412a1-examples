@@ -24,7 +24,7 @@ urlpatterns = [
     path("hw/", include("hw.urls")), 
     path("formdata/", include("formdata.urls")), 
     path("blog/", include("blog.urls")),  
-    path("marathon_analytics", include("marathon_analytics.urls")), ## new path
+    path("marathon_analytics/", include("marathon_analytics.urls")), ## new path
     
 ] 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

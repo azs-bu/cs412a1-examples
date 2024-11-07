@@ -25,7 +25,11 @@
             {% for r in results %}
             <tr>
                 
-                <td>{{r.place_overall}}</td>
+                <td>
+                    <a href="{% url 'result_detail' r.pk %}">
+                    {{r.place_overall}}
+                    </a>
+                </td>
                 <td>{{r.first_name}} {{r.last_name}}</a>
                 </td>
                 <td>{{r.ctz}}</td>
