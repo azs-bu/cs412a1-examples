@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "hw", 
     "formdata", 
     "blog", 
-    "marathon_analytics", ## NEW
+    "marathon_analytics", 
+    "db_examples", ## NEW
 ]
 
 MIDDLEWARE = [
